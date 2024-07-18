@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-data & X-text</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+<div x-data="{ message: 'alpine Js is runnig'}" >
+    <p x-text="message"></p>
+</div>
+
+
+<h2 x-data="{ HText: 'Alpine Js is awesome'}" x-text="HText" ></h2>
+
+
+<div x-data="{
+    name: 'jhon',
+    email: 'jhon@email.com',
+    number: 123456789
+}">
+    <li x-text="name"></li>
+    <li x-text="email"></li>
+    <li x-text="number"></li>
+</div>
+
+
+<!-- recebendo dados do javascript -->
+<div x-data="userDetalis()">
+    <li x-text="name"></li>
+    <li x-text="email"></li>
+    <li x-text="number"></li>
+</div>
+
+<div x-data="{ message: 'alpine Js is runnig'}" >
+</div>
+<p x-text="message"></p>
+<!-- Não funciona fora do component -->
+
+<!-- é Possivel chamar variaveis no elemento filho sendo possivel concatenar -->
+<div x-data="{message1: 'Alpine js is very cool'}">
+    <div x-data="{message2: 'Alpine js is very easy to learn'}">
+        <div x-data="{message3: 'Alpine js is awesome'}">
+            <p x-text="message1+message3" ></p>
+        </div>
+    </div>
+
+</div>
+
+<!-- possivel fazer alguns calculos e chamar aplicação alpine apenas com a tag "x-data" -->
+<div x-data>
+    <p x-text="3+3"></p>
+</div>
+
+
+
+
+<script>
+
+    function userDetalis(){
+        return{
+            name: 'jhon',
+            email: 'john@gmail.com',
+            number: '123456'
+        }
+    }
+
+</script>
+    
+</body>
+</html>

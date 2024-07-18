@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> tool tip </title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- x-cloak hides the elements before alpine loads -->
+    <!-- x-cloak rederiza os elementos depois do carregamento da pagina, evitando assim exposição de conteudo durante o carregamento da pagina -->
+
+    
+    <div class="tooltip" x-data="{tooltip: false}">
+
+        <button
+            x-on:mouseover="tooltip = true"
+            x-on:mouseleave="tooltip = false"
+        >hover ME</button>     
+
+        <div class="tooltip-text" x-show="tooltip">
+            this is a tooltip
+        </div>
+    </div>
+
+    <div class="tooltip" x-data="{tooltip: false}">
+
+        <button
+            x-on:click="tooltip = !tooltip"
+        >click</button>     
+
+        <div class="tooltip-text" x-show="tooltip">
+            this is a tooltip
+        </div>
+    </div>
+
+
+    
+</body>
+</html>

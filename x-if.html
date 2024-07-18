@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-if</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+
+
+
+    <!--
+    para o if temos que colocar os elementos dentro de 1 template (se não não funciona) 
+    caso contrario temos que usar x-show
+    -->
+
+    <!-- usando o if o alpine ira inserir ou retirar a tag de dentro do template no html 
+        já o x-show o alpine apenas maniula o display: none, display: block
+         -->
+
+
+    <div x-data="{ show: false}">
+        <button @click="show = !show">x-if Toggle</button>
+        <template x-if="show">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Deleniti ex sequi voluptas. Eligendi ipsa perferendis 
+                nisi quasi, odio possimus iste ab voluptas recusandae
+                 blanditiis illum soluta consectetur fuga velit dicta.
+            </p>
+        </template>
+    </div>
+
+    <div x-data="{ show: false}">
+        <button @click="show = !show">x- show Toggle</button>
+        <div x-show="show">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Deleniti ex sequi voluptas. Eligendi ipsa perferendis 
+                nisi quasi, odio possimus iste ab voluptas recusandae
+                 blanditiis illum soluta consectetur fuga velit dicta.
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>

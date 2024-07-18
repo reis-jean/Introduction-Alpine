@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-for</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-- assim com o if o for deve ser declarado em um template -->
+
+    <ul x-data="{numbers: [1, 2, 3, 4]}">
+        <template x-for="number in numbers">
+            <li x-text="number"></li>
+        </template>        
+    </ul>
+
+    <div x-data="{
+        fruits:['Apple', 'Banana', 'berry', 'mango' ]
+    }">
+        <template x-for="(fruit, index) in fruits">
+            <div >
+                <span x-text="index"></span>: 
+                <span x-text="fruit"></span>
+
+
+            </div>
+        </template>
+
+
+    </div>
+
+    <ul x-data>
+        <template x-for="i in 10">
+            <p x-text="i" ></p>
+        </template>
+    </ul>
+
+    
+    <div x-data="{
+        fruits:['Apple', 'Banana', 'berry', 'mango' ]
+    }">
+        <template x-for="(fruit, index) in fruits">
+            <div >
+                <span x-text="index"></span>: 
+                <span x-text="fruit"></span>
+
+
+            </div>
+        </template>
+
+
+    </div>
+
+    
+</body>
+</html>

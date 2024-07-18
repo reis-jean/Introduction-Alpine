@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-bind</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .bold{
+            font-style: bold;
+        }
+
+        .green{
+            color: green;
+        }
+        img{
+            width: 100%;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div x-data="{ myText: 'bold green'}">
+        <h2 x-bind:class = "myText"> this is color green</h2>
+    </div>
+
+
+    <div x-data="{ styles: {color: 'white', background: 'blue', padding: '4rem'}}">
+        <h2 x-bind:style = "styles"> This is a text with alpine styles</h2>
+    </div>
+
+
+
+    <div x-data="{ image: 'https://plus.unsplash.com/premium_photo-1664475926084-d20248544896?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}">
+        <img x-bind:src="image" alt="">
+    </div>
+
+    <div x-data="{isOpen: false}">
+        <p x-bind:class=" isOpen ? 'show' : 'hidden' ">
+            este é o texto de teste para o isOpen
+        </p>
+        <button x-on:click="isOpen = !isOpen">Toggle</button>
+    </div>
+
+    <!-- O x-bind funciona sem sua declaração tbm -->
+    
+    <div x-data="{ myText: 'bold green'}">
+        <h2 :class = "myText"> this is color green without x-bind declared</h2>
+    </div>
+
+    <!-- O x-on funciona sem sua declaração tbm -->
+
+    <div x-data="{isOpen: false}">
+        <p x-bind:class=" isOpen ? 'show' : 'hidden' ">
+            este é o texto de teste para o isOpen sem o x-on declarado
+        </p>
+        <button @click="isOpen = !isOpen">Toggle</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'montserrat', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 660px;
+    padding: 0 50px;
+}
+
+.tab-btns{
+    display: flex;
+}
+
+button{
+    border: none;
+    padding: 12px 25px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+
+}
+
+.tab-contents{
+    background-color: #313113;
+    color: #fff;
+    padding: 30px;
+    border-radius: 0 8px 8px 8px;
+}
+
+
+.tab-contents p{
+    font-size: 14px;
+    padding-top: 30px;
+    color: #d3d3d3;
+}
+
+
+button.active{
+    background-color: #313131;
+    color: #FFF;
+}
+
+
+[x-cloak]{
+    display: none;
+}
+

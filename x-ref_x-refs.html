@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x-ref e x-refs</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+
+
+    <!-- com o x-ref a gente declara a referencia
+        e com o x-refs a gente recupera a referencia declarada 
+    -->
+
+
+    <div x-data>
+
+        <p x-ref="text">
+            este é um texto que declarei a referencia e com o vou dar um console log
+        </p>
+        <button @click="console.log($refs.text.innerText)">Togle</button>
+        
+    </div>
+
+    <div x-data>
+
+        <p x-ref="text">
+            este é um texto que declarei a referencia e com o vou dar um remove 
+        </p>
+        <button @click="$refs.text.remove()">remove</button>
+        
+    </div>
+
+    <div x-data>
+        <button @click="$refs.name.focus()">focus</button>
+        <input type="text" x-ref="name">
+    </div>
+    
+</body>
+</html>

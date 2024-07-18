@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> x-transition </title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+       .box{
+        width: 300px;
+        height: 300px;
+        background-color: yellowgreen;
+       }
+    </style>
+</head>
+<body>
+
+    <!-- O x-transition adiciona uma trasição ao manipular elementos:
+        só funciona com x-show (não funciona com x-if)
+        é possivel addicionar efeitos de animação. 
+        tem 500ms de animação default
+        a gente consegue editar:
+        transição de entrada:
+        x-transitions:enter.duration.300ms
+        de saida
+        x-transitions:leave.duration.300ms
+        um delay (espera tantos ms para depois acontecer)
+        x-transitions:delay.duration.300ms
+        forma que irá transionar:
+        x-transitions:scale.duration.40
+        x-transitions:opacity.duration.40
+        
+        
+        inicia transição por tamanho n esquerda
+        x-transitions.scale.origin.left
+
+        Recebemos 6 diretivas
+.enter = Aplicada durante toda a fase de entrada. Propriedades de transição devem ser adicionadas aqui.
+.enter-start = Adicionada antes da animação começar, removida um frame após isso. O estado inicial da animação deve ser adicionado aqui.
+.enter-end = Adicionada um frame após a animação começar, removida quando a animação termina. O estado final da animação deve ser adicionado aqui.
+.leave = Aplicada durante toda a fase de saída. Propriedades de transição devem ser adicionadas aqui.
+.leave-start = Adicionada antes da animação começar, removida um frame após isso. O estado inicial da animação deve ser adicionado aqui.
+.leave-end = Adicionada um frame após a animação começar, removida quando a animação termina. O estado final da animação deve ser adicionado aqui.
+
+        -->
+
+    
+    <div x-data="{open: false}">
+        <button @click="open= ! open"> Toggle</button>
+
+        <div class="box" x-show="open"
+        x-transition
+        x-transitions:delay.duration.1000ms
+        x-transitions:leave.duration.1000ms
+        x-transitions:scale.duration.40
+        > </div>
+    </div>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Countdown-timer </title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container" x-data="{accordion: 0}" x-init="console.log($refs.container1)">
+    <div class="single-acc">
+      <button 
+       @click="accordion !== 1 ? accordion = 1 : accordion = null"
+       
+       >
+        <svg :class="accordion == 1 ? 'hide' : 'show' "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+
+
+        <svg :class="accordion == 1 ? 'show' : 'hide' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+        
+        
+        Accordion 1 
+      </button>
+
+      <div 
+        class="acc-content" 
+        x-ref="container1"
+        :style=" accordion == 1 ? 'max-height: '+ $refs.container1.scrollHeight + 'px' : '' " 
+      >
+        <p> 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quaerat. Ipsa, illum officiis 
+          corrupti sapiente quod officia esse tempora inventore eligendi necessitatibus quia animi ducimus.
+          Quibusdam aperiam est, pariatur fuga vel dicta? Velit quasi eveniet, quam officiis itaque eum aliquid. 
+        </p>
+
+      </div>
+    </div>
+
+
+    <div class="single-acc">
+      <button 
+       @click="accordion !== 2 ? accordion = 2 : accordion = null"
+       
+       >
+        <svg :class="accordion == 2 ? 'hide' : 'show' "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+
+
+        <svg :class="accordion == 2 ? 'show' : 'hide' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+        
+        
+        Accordion 2 
+      </button>
+
+      <div 
+        class="acc-content" 
+        x-ref="container1"
+        :style=" accordion == 2 ? 'max-height: '+ $refs.container1.scrollHeight + 'px' : '' " 
+      >
+        <p> 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quaerat. Ipsa, illum officiis 
+          corrupti sapiente quod officia esse tempora inventore eligendi necessitatibus quia animi ducimus.
+          Quibusdam aperiam est, pariatur fuga vel dicta? Velit quasi eveniet, quam officiis itaque eum aliquid. 
+        </p>
+
+      </div>
+    </div>
+    <div class="single-acc">
+      <button 
+       @click="accordion !== 3 ? accordion = 3 : accordion = null"
+       
+       >
+        <svg :class="accordion == 3 ? 'hide' : 'show' "  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+
+
+        <svg :class="accordion == 3 ? 'show' : 'hide' " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+        
+        
+        Accordion 3
+      </button>
+
+      <div 
+        class="acc-content" 
+        x-ref="container1"
+        :style=" accordion == 3 ? 'max-height: '+ $refs.container1.scrollHeight + 'px' : '' " 
+      >
+        <p> 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quaerat. Ipsa, illum officiis 
+          corrupti sapiente quod officia esse tempora inventore eligendi necessitatibus quia animi ducimus.
+          Quibusdam aperiam est, pariatur fuga vel dicta? Velit quasi eveniet, quam officiis itaque eum aliquid. 
+        </p>
+
+      </div>
+    </div>
+
+
+
+  </div>
+    
+     
+
+    
+</body>
+</html>
